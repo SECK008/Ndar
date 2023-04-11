@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ligne4 index{% endblock %}
+
+{% block body %}
+    <h1>Ligne4 index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Trajet</th>
+                <th>Disponibilite</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ligne4 in ligne4s %}
+            <tr>
+                <td>{{ ligne4.id }}</td>
+                <td>{{ ligne4.trajet }}</td>
+                <td>{{ ligne4.disponibilite ? ligne4.disponibilite|date('H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_ligne4_show', {'id': ligne4.id}) }}">show</a>
+                    <a href="{{ path('app_ligne4_edit', {'id': ligne4.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_ligne4_new') }}">Create new</a>
+{% endblock %}

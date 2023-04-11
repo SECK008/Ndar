@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ligne6{% endblock %}
+
+{% block body %}
+    <h1>Ligne6</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ ligne6.id }}</td>
+            </tr>
+            <tr>
+                <th>Trajet</th>
+                <td>{{ ligne6.trajet }}</td>
+            </tr>
+            <tr>
+                <th>Disponibilite</th>
+                <td>{{ ligne6.disponibilite ? ligne6.disponibilite|date('H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_ligne6_index') }}">back to list</a>
+
+    <a href="{{ path('app_ligne6_edit', {'id': ligne6.id}) }}">edit</a>
+
+    {{ include('ligne6/_delete_form.html.twig') }}
+{% endblock %}

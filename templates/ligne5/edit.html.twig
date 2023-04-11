@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Ligne5{% endblock %}
+
+{% block body %}
+    <h1>Edit Ligne5</h1>
+
+    {{ include('ligne5/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_ligne5_index') }}">back to list</a>
+
+    {{ include('ligne5/_delete_form.html.twig') }}
+{% endblock %}

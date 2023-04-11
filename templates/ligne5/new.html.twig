@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Ligne5{% endblock %}
+
+{% block body %}
+    <h1>Create new Ligne5</h1>
+
+    {{ include('ligne5/_form.html.twig') }}
+
+    <a href="{{ path('app_ligne5_index') }}">back to list</a>
+{% endblock %}

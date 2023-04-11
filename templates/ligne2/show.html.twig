@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ligne2{% endblock %}
+
+{% block body %}
+    <h1>Ligne2</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ ligne2.id }}</td>
+            </tr>
+            <tr>
+                <th>Trajet</th>
+                <td>{{ ligne2.trajet }}</td>
+            </tr>
+            <tr>
+                <th>Disponibilite</th>
+                <td>{{ ligne2.disponibilite ? ligne2.disponibilite|date('H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_ligne2_index') }}">back to list</a>
+
+    <a href="{{ path('app_ligne2_edit', {'id': ligne2.id}) }}">edit</a>
+
+    {{ include('ligne2/_delete_form.html.twig') }}
+{% endblock %}

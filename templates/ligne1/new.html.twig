@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Ligne1{% endblock %}
+
+{% block body %}
+    <h1>Create new Ligne1</h1>
+
+    {{ include('ligne1/_form.html.twig') }}
+
+    <a href="{{ path('app_ligne1_index') }}">back to list</a>
+{% endblock %}
